@@ -1,5 +1,6 @@
 # Installation and Setup
 
+## Tun2Socks
 For example, your proxy is http://192.168.191.57:7071, then:
 
 1. Copy [wintun](https://www.wintun.net/) dll file into system32
