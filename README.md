@@ -3,6 +3,8 @@
 Easy way is use VPN mode in Nekoray
 [Nekoray](https://github.com/MatsuriDayo/nekoray)
 
+![image](https://user-images.githubusercontent.com/11188109/235293800-39022689-3926-4f4e-9de2-669a797bf994.png)
+
 ## Tun2Socks
 
 ### Requirements
