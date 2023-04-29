@@ -1,4 +1,7 @@
 # Installation and Setup
+## Nekoray
+Easy way is use VPN mode in Nekoray
+[Nekoray](https://github.com/MatsuriDayo/nekoray)
 
 ## Tun2Socks
 
