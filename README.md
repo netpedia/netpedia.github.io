@@ -50,17 +50,15 @@ route add 0.0.0.0 mask 0.0.0.0 192.168.123.1 if 51 metric 5
 ## Netmod
 
 * [Download Netmod](https://sourceforge.net/projects/netmodhttp/)
-* Setup/Import config and start Netmod. You'll get proxy in socks5://127.0.0.1:1080, connect and tunnel to your network using bitvise
+* Setup/Import config and start Netmod. You'll get proxy in socks5://127.0.0.1:1080, connect and serve socks proxy to your network using bitvise
   ```sh
   𝗣𝗔𝗬𝗟𝗢𝗔𝗗 ➔ GET / HTTP/1.1[crlf]Host: [host][crlf]Connection: Upgrade[crlf]User-Agent: [ua][crlf]Upgrade: websocket[crlf][crlf]
   𝗣𝗿𝗼𝘅𝘆 ➔ cdn.noice.id:80
   𝗘𝘅𝗽𝗶𝗿𝗲 𝗧𝗶𝗺𝗲 ➔ lifeTime
   𝗔𝗸𝘂𝗻 𝗦𝗦𝗛 ➔ vpn.vvip-kanghory.my.id:80@trialhory:123
   ```
-* Set up Socks5 proxy
-  ```sh
-  ssh -D 8123 -f -C -q -N socksserverip.com
-  ```
+  ![image](https://github.com/netpedia/netpedia.github.io/assets/11188109/f9bafa49-e4d1-4ca9-802d-116341ba3845)
+
 * Set up Tap
   ```sh
   tun2socks -device wintun -proxy socks5://127.0.0.1:8123
