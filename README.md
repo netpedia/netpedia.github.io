@@ -34,6 +34,11 @@ Use Interface :
 
 3. Set gateway to tap interface except for proxy routing.
 
+## VPN2Share
+
+* [on PC](https://newtoolsworks.com/tun2tap/)
+* [on Phone](https://play.google.com/store/apps/details?id=com.newtoolsworks.vpn2share&hl=en_US)
+* [on TV](https://apkpure.com/vpn2share-share-vpn-no-root/com.newtoolsworks.vpn2share)
 ![image](https://user-images.githubusercontent.com/11188109/233844995-b8e4f27e-f54e-4a22-99cf-53bba2c95a97.png)
 
 ```sh
