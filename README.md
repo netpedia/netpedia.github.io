@@ -49,4 +49,22 @@ route add 0.0.0.0 mask 0.0.0.0 192.168.123.1 if 51 metric 5
 
 ## Netmod
 
-* [PC](https://sourceforge.net/projects/netmodhttp/)
+* [Download Netmod](https://sourceforge.net/projects/netmodhttp/)
+* Setup/Import config and start Netmod
+  ```sh
+  𝗣𝗔𝗬𝗟𝗢𝗔𝗗 ➔ GET / HTTP/1.1[crlf]Host: [host][crlf]Connection: Upgrade[crlf]User-Agent: [ua][crlf]Upgrade: websocket[crlf][crlf]
+  𝗣𝗿𝗼𝘅𝘆 ➔ cdn.noice.id:80
+  𝗘𝘅𝗽𝗶𝗿𝗲 𝗧𝗶𝗺𝗲 ➔ lifeTime
+  𝗔𝗸𝘂𝗻 𝗦𝗦𝗛 ➔ vpn.vvip-kanghory.my.id:80@trialhory:123
+  ```
+* Set up Tap
+  ```sh
+  tun2socks -device wintun -proxy socks5://127.0.0.1:1080
+  ```
+* Setup IP Adddress for TAP, check interface number and set routing gateway
+  ```sh
+  netsh interface ip set address name="wintun" source=static addr=192.168.123.1 mask=255.255.255.0 gateway=none
+  route print
+  route add 0.0.0.0 mask 0.0.0.0 192.168.123.1 if 51 metric 5
+  ```
+
