@@ -43,6 +43,8 @@ route add 0.0.0.0 mask 0.0.0.0 192.168.123.1 if <IF NUM> metric 5
 route add <proxy server ip> mask 255.255.255.255 <primary gateway ip for proxy server>
 ```
 
+![image](https://github.com/netpedia/netpedia.github.io/assets/11188109/6cea5bac-fdf0-49e0-9e16-9cc2e311b093)
+
 ## VPN2Share
 
 * [on PC](https://newtoolsworks.com/tun2tap/)
