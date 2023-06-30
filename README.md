@@ -72,4 +72,5 @@ route add 0.0.0.0 mask 0.0.0.0 192.168.123.1 if 51 metric 5
 
 ## Reference
 
-1. [Superuser](https://superuser.com/questions/1339015/virtual-network-adapter-that-forwards-request-to-a-socks-proxy)
+1. Proxy to TAP Interface in [Superuser](https://superuser.com/questions/1339015/virtual-network-adapter-that-forwards-request-to-a-socks-proxy)
+2. UDPGW in [stackpointer](https://stackpointer.io/network/ssh-port-forwarding-tcp-udp/365/)
