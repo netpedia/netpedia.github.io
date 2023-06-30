@@ -40,7 +40,7 @@ Use Interface :
 ```sh
 route print
 route add 0.0.0.0 mask 0.0.0.0 192.168.123.1 if <IF NUM> metric 5
-route add <server ip> mask 255.255.255.255 <primary gateway ip>
+route add <proxy server ip> mask 255.255.255.255 <primary gateway ip for proxy server>
 ```
 
 ## VPN2Share
@@ -70,7 +70,7 @@ route add <server ip> mask 255.255.255.255 <primary gateway ip>
   netsh interface ip set address name="wintun" source=static addr=192.168.123.1 mask=255.255.255.0 gateway=none
   route print
   route add 0.0.0.0 mask 0.0.0.0 192.168.123.1 if <IF NUM> metric 5
-  route add <server ip> mask 255.255.255.255 <primary gateway ip>
+  route add <proxy server ip> mask 255.255.255.255 <primary gateway ip for proxy server>
   ```
 
 ## Reference
