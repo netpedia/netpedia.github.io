@@ -7,6 +7,8 @@ Easy way is use VPN mode in Nekoray
 
 ![image](https://user-images.githubusercontent.com/11188109/235293800-39022689-3926-4f4e-9de2-669a797bf994.png)
 
+![image](https://github.com/netpedia/netpedia.github.io/assets/11188109/6cea5bac-fdf0-49e0-9e16-9cc2e311b093)
+
 ## Tun2Socks
 
 ### Requirements
@@ -42,8 +44,6 @@ route print
 route add 0.0.0.0 mask 0.0.0.0 192.168.123.1 if <IF NUM> metric 5
 route add <proxy server ip> mask 255.255.255.255 <primary gateway ip for proxy server>
 ```
-
-![image](https://github.com/netpedia/netpedia.github.io/assets/11188109/6cea5bac-fdf0-49e0-9e16-9cc2e311b093)
 
 ## VPN2Share
 
