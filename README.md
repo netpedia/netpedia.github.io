@@ -53,27 +53,10 @@ route add <proxy server ip> mask 255.255.255.255 <primary gateway ip for proxy s
 
 ## Netmod
 
-* [Download Netmod](https://sourceforge.net/projects/netmodhttp/)
-* Setup/Import config and start Netmod. You'll get proxy in socks5://127.0.0.1:1080, connect and serve socks proxy to your network using bitvise
-  ```sh
-  𝗣𝗔𝗬𝗟𝗢𝗔𝗗 ➔ GET / HTTP/1.1[crlf]Host: [host][crlf]Connection: Upgrade[crlf]User-Agent: [ua][crlf]Upgrade: websocket[crlf][crlf]
-  𝗣𝗿𝗼𝘅𝘆 ➔ cdn.noice.id:80
-  𝗘𝘅𝗽𝗶𝗿𝗲 𝗧𝗶𝗺𝗲 ➔ lifeTime
-  𝗔𝗸𝘂𝗻 𝗦𝗦𝗛 ➔ vpn.vvip-kanghory.my.id:80@trialhory:123
-  ```
-  ![image](https://github.com/netpedia/netpedia.github.io/assets/11188109/f9bafa49-e4d1-4ca9-802d-116341ba3845)
-
-* Set up Tap
-  ```sh
-  tun2socks -device wintun -proxy socks5://127.0.0.1:8123
-  ```
-* Setup IP Adddress for TAP, check interface number and set routing gateway
-  ```sh
-  netsh interface ip set address name="wintun" source=static addr=192.168.123.1 mask=255.255.255.0 gateway=none
-  route print
-  route add 0.0.0.0 mask 0.0.0.0 192.168.123.1 if <IF NUM> metric 5
-  route add <proxy server ip> mask 255.255.255.255 <primary gateway ip for proxy server>
-  ```
+* [Download Netmod](https://sourceforge.net/projects/netmodhttp/) Update 2023-05-09 
+* [Download](https://openvpn.net/community-downloads/) OpenVPN [2.6.3](https://swupdate.openvpn.org/community/releases/OpenVPN-2.6.3-I003-amd64.msi)
+* [Download SSTAP-Beta](https://sourceforge.net/projects/sstap/) global setup to socks5://127.0.0.1:1080
+* Shared SSTAP 1 to any network
 
 ## Reference
 
