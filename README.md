@@ -13,12 +13,10 @@ Easy way is use VPN mode in Nekoray
 
 ### Requirements
 1. Copy [wintun](https://www.wintun.net/) dll file into system32
-2. install tun2socks golang package or just download from release tab
-    ```sh
-    go install github.com/xjasonlyu/tun2socks/v2@latest
-    ```
+2. Copy and rename [tun2socks.exe](https://github.com/xjasonlyu/tun2socks/releases) into  system32
+3. [Download bat file](wintun.bat) and run as administrator
 
-### Run
+### Manual Wintun Run
 For example, your proxy is http://192.168.191.57:7071, then:
 
 1. open cmd in Administrator Mode, create layer 3 network interface(tap)
@@ -44,30 +42,9 @@ tun2socks -device wintun -proxy socks5://host:port
   route add <proxy server ip> mask 255.255.255.255 <primary gateway ip for proxy server>
   ```
 
-### Use Batch Windows Script
+## Use Proxy Setting
 
 ![image](https://github.com/netpedia/netpedia.github.io/assets/11188109/5af51c8b-0be6-4bbd-af69-cc14850a45bf)  
-
-Just copy and paste this script save as run.bat and execute as Admin
-```bat
-@echo off
-setlocal enabledelayedexpansion
-
-for /f "tokens=3" %%a in ('route print ^| findstr "\<0.0.0.0\>"') do (
-    set "gateway=%%a"
-    goto :found
-)
-
-:found
-echo Default Gateway: %gateway%
-set concatenated=socks5://%gateway%:1080
-echo wintun : %concatenated%
-start tun2socks -device wintun -proxy %concatenated%
-timeout /t 10 >nul
-netsh interface ip set address name="wintun" source=static addr=172.16.1.1 mask=255.255.255.0 gateway=none
-route delete 0.0.0.0
-route add 0.0.0.0 mask 0.0.0.0 172.16.1.1
-```
 
 ## VPN2Share
 
