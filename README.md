@@ -1,4 +1,7 @@
-# Installation and Setup
+# Installation and Setup Netpedia
+
+Instalation and setup for client
+
 ## Nekoray
 Easy way is use VPN mode in Nekoray
 [Nekoray](https://github.com/MatsuriDayo/nekoray)
