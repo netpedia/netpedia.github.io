@@ -46,6 +46,8 @@ tun2socks -device wintun -proxy socks5://host:port
 
 ### Use Batch Windows Script
 
+![image](https://github.com/netpedia/netpedia.github.io/assets/11188109/5af51c8b-0be6-4bbd-af69-cc14850a45bf)  
+
 Just copy and paste this script save as run.bat and execute as Admin
 ```bat
 @echo off
