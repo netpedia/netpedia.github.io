@@ -13,10 +13,11 @@ Easy way is use VPN mode in Nekoray
 
 ### Requirements
 1. Copy [wintun](https://www.wintun.net/) dll file into system32
-2. install tun2socks golang package
-```sh
-go install github.com/xjasonlyu/tun2socks/v2@latest
-```
+2. install tun2socks golang package or just download from release tab
+    ```sh
+    go install github.com/xjasonlyu/tun2socks/v2@latest
+    ```
+
 ### Run
 For example, your proxy is http://192.168.191.57:7071, then:
 
@@ -25,24 +26,45 @@ For example, your proxy is http://192.168.191.57:7071, then:
 tun2socks -device wintun -proxy http://192.168.191.57:7071
 tun2socks -device wintun -proxy socks5://host:port
 ```
-2. set IP Address and get interface number using route print, for example 51.
-By using CMD :
-```sh
-netsh interface ip set address name="wintun" source=static addr=192.168.123.1 mask=255.255.255.0 gateway=none
-```
-
-Use Interface :
-
-![image](https://user-images.githubusercontent.com/11188109/233845162-753567e6-0911-4788-840a-4b877fcdd610.png)
+2. set IP Address and get interface number using route print, for example 51 identified as WireGuard Tunnel. By using CMD :
+    ```sh
+    netsh interface ip set address name="wintun" source=static addr=192.168.123.1 mask=255.255.255.0 gateway=none
+    ```
+    Use Interface :
+    
+    ![image](https://user-images.githubusercontent.com/11188109/233845162-753567e6-0911-4788-840a-4b877fcdd610.png)
 
 3. Set gateway to tap interface except for proxy routing. Route default traffic to TUN interface and make proxy server ip as an exception.
 
-![image](https://user-images.githubusercontent.com/11188109/233844995-b8e4f27e-f54e-4a22-99cf-53bba2c95a97.png)
+  ![image](https://user-images.githubusercontent.com/11188109/233844995-b8e4f27e-f54e-4a22-99cf-53bba2c95a97.png)
 
-```sh
-route print
-route add 0.0.0.0 mask 0.0.0.0 192.168.123.1 if <IF NUM> metric 5
-route add <proxy server ip> mask 255.255.255.255 <primary gateway ip for proxy server>
+  ```sh
+  route print
+  route add 0.0.0.0 mask 0.0.0.0 192.168.123.1 if <IF NUM> metric 5
+  route add <proxy server ip> mask 255.255.255.255 <primary gateway ip for proxy server>
+  ```
+
+### Use Batch Windows Script
+
+Just copy and paste this script save as run.bat and execute as Admin
+```bat
+@echo off
+setlocal enabledelayedexpansion
+
+for /f "tokens=3" %%a in ('route print ^| findstr "\<0.0.0.0\>"') do (
+    set "gateway=%%a"
+    goto :found
+)
+
+:found
+echo Default Gateway: %gateway%
+set concatenated=socks5://%gateway%:1080
+echo wintun : %concatenated%
+start tun2socks -device wintun -proxy %concatenated%
+timeout /t 10 >nul
+netsh interface ip set address name="wintun" source=static addr=172.16.1.1 mask=255.255.255.0 gateway=none
+route delete 0.0.0.0
+route add 0.0.0.0 mask 0.0.0.0 172.16.1.1
 ```
 
 ## VPN2Share
