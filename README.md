@@ -1,5 +1,10 @@
 # Installation and Setup Netpedia
 
+Setup VPN relay server on Android using [v2rayNG](https://play.google.com/store/apps/details?id=com.v2ray.ang):
+1. Scan Vmess QR Code connection
+2. Relay socks5 on 1080 port and http on 8080
+3. Set Up and Turn on Tether wifi
+
 Installation and setup for client Requirements:
 1. Copy [wintun](https://www.wintun.net/) dll file into system32
 2. Copy and rename [tun2socks.exe](https://github.com/xjasonlyu/tun2socks/releases) into  system32
