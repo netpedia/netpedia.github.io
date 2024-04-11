@@ -7,7 +7,7 @@ Setup VPN relay server on Android using [v2rayNG](https://play.google.com/store/
 
 Installation and setup for Android:
 1. Install and set [Tun2Tap](https://play.google.com/store/apps/details?id=com.newtoolsworks.tun2tap)
-2. Run with lazyconnect
+2. Run with lazy-connect
 
 Installation and setup for PC client Requirements:
 1. Copy [wintun](https://www.wintun.net/) dll file into system32
