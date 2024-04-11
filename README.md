@@ -5,7 +5,11 @@ Setup VPN relay server on Android using [v2rayNG](https://play.google.com/store/
 2. Relay socks5 on 1080 port and http on 8080
 3. Set Up and Turn on Tether wifi
 
-Installation and setup for client Requirements:
+Installation and setup for Android:
+1. Install and set [Tun2Tap](https://play.google.com/store/apps/details?id=com.newtoolsworks.tun2tap)
+2. Run with lazyconnect
+
+Installation and setup for PC client Requirements:
 1. Copy [wintun](https://www.wintun.net/) dll file into system32
 2. Copy and rename [tun2socks.exe](https://github.com/xjasonlyu/tun2socks/releases) into  system32
 3. [Download bat file](wintun.bat) and run as administrator
