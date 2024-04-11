@@ -16,6 +16,7 @@ Installation and setup for PC client Requirements:
 2. Copy and rename [tun2socks.exe](https://github.com/xjasonlyu/tun2socks/releases) into  system32
 3. [Download bat file](wintun.bat) and run as administrator
 
+## Advance Setup
 ### Manual Wintun Run
 For example, your proxy is http://192.168.191.57:7071, then:
 
