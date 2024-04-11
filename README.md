@@ -1,20 +1,6 @@
 # Installation and Setup Netpedia
 
-Instalation and setup for client
-
-## Nekoray
-Easy way is use VPN mode in Nekoray
-[Nekoray](https://github.com/MatsuriDayo/nekoray)
-
-![image](https://github.com/netpedia/netpedia.github.io/assets/11188109/0c22d5f4-b1f3-4a77-a610-b54c56d38ea5)
-
-![image](https://user-images.githubusercontent.com/11188109/235293800-39022689-3926-4f4e-9de2-669a797bf994.png)
-
-![image](https://github.com/netpedia/netpedia.github.io/assets/11188109/6cea5bac-fdf0-49e0-9e16-9cc2e311b093)
-
-## Tun2Socks
-
-### Requirements
+Installation and setup for client Requirements:
 1. Copy [wintun](https://www.wintun.net/) dll file into system32
 2. Copy and rename [tun2socks.exe](https://github.com/xjasonlyu/tun2socks/releases) into  system32
 3. [Download bat file](wintun.bat) and run as administrator
@@ -27,7 +13,7 @@ For example, your proxy is http://192.168.191.57:7071, then:
 tun2socks -device wintun -proxy http://192.168.191.57:7071
 tun2socks -device wintun -proxy socks5://host:port
 ```
-2. set IP Address and get interface number using route print, for example 51 identified as WireGuard Tunnel. By using CMD :
+2. set the IP Address and get the interface number using route print. For example, 51 were identified as WireGuard Tunnel. By using CMD :
     ```sh
     netsh interface ip set address name="wintun" source=static addr=192.168.123.1 mask=255.255.255.0 gateway=none
     ```
@@ -35,7 +21,7 @@ tun2socks -device wintun -proxy socks5://host:port
     
     ![image](https://user-images.githubusercontent.com/11188109/233845162-753567e6-0911-4788-840a-4b877fcdd610.png)
 
-3. Set gateway to tap interface except for proxy routing. Route default traffic to TUN interface and make proxy server ip as an exception.
+3. Set the gateway to tap interface except for proxy routing. Route default traffic to the TUN interface and make the proxy server IP as an exception.
 
   ![image](https://user-images.githubusercontent.com/11188109/233844995-b8e4f27e-f54e-4a22-99cf-53bba2c95a97.png)
 
