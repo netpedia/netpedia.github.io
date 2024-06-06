@@ -1,4 +1,12 @@
 # Installation and Setup Netpedia
+
+## VPS Provider
+Free VPS Provider
+1. [hax.co.id](https://hax.co.id/)
+2. [free vps vc](https://free.vps.vc/)
+3. [Cepat Cloud](https://cepatcloud.id/product/vps-gratis/)
+4. [VPS Free](https://vpsfree.org/)
+
 ## Relay Server
 Setup VPN relay server on Android using [v2rayNG](https://play.google.com/store/apps/details?id=com.v2ray.ang):
 1. Scan Vmess QR Code connection
